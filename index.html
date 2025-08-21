@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🇨🇳 学中文 - Impara il Cinese</title>
+    <title>🇷🇺 Изучай русский - Impara il Russo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
         
         body {
             font-family: 'Inter', sans-serif;
         }
         
-        .chinese-font {
-            font-family: 'Noto Sans SC', sans-serif;
+        .cyrillic-font {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
         }
         
         .gradient-bg {
-            background: linear-gradient(135deg, #dc2626 0%, #fbbf24 50%, #dc2626 100%);
+            background: linear-gradient(135deg, #dc2626 0%, #ffffff 50%, #2563eb 100%);
         }
         
-        .chinese-bg {
-            background: linear-gradient(135deg, #dc2626 0%, #fbbf24 25%, #dc2626 50%, #fbbf24 75%, #dc2626 100%);
+        .russian-bg {
+            background: linear-gradient(135deg, #dc2626 0%, #ffffff 25%, #2563eb 50%, #ffffff 75%, #dc2626 100%);
         }
         
         .card-hover {
@@ -73,7 +74,7 @@
             color: #ffffff;
         }
         
-        .chinese-pattern {
+        .russian-pattern {
             background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
                               radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 2px, transparent 2px);
             background-size: 40px 40px;
@@ -85,39 +86,46 @@
         }
         
         .unlocked-badge {
-            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-            border: 1px solid #10b981;
-            color: #065f46;
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border: 1px solid #3b82f6;
+            color: #1e40af;
         }
         
-        .hanzi-display {
+        .cyrillic-display {
             font-size: 4rem;
             line-height: 1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
-        .tone-1 { color: #dc2626; } /* First tone - high level */
-        .tone-2 { color: #f59e0b; } /* Second tone - rising */
-        .tone-3 { color: #16a34a; } /* Third tone - falling-rising */
-        .tone-4 { color: #2563eb; } /* Fourth tone - falling */
-        .tone-neutral { color: #6b7280; } /* Neutral tone */
+        .snow-animation {
+            animation: snow 8s linear infinite;
+        }
+        
+        @keyframes snow {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        
+        .matryoshka-colors {
+            background: linear-gradient(135deg, #dc2626, #f59e0b, #10b981, #3b82f6, #8b5cf6);
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-red-50 to-yellow-50 min-h-screen">
+<body class="bg-gradient-to-br from-red-50 via-white to-blue-50 min-h-screen">
     <div id="app" class="container mx-auto px-4 py-8">
         <!-- Header -->
         <header class="text-center mb-12">
-            <div class="gradient-bg text-white rounded-3xl p-8 mb-8 relative overflow-hidden chinese-pattern">
-                <div class="absolute top-4 right-4 text-4xl floating-element golden-text">🐉</div>
-                <div class="absolute bottom-4 left-4 text-3xl floating-element golden-text" style="animation-delay: -2s;">🏮</div>
-                <div class="absolute top-4 left-4 text-2xl floating-element golden-text" style="animation-delay: -1s;">🎋</div>
-                <div class="absolute bottom-4 right-4 text-2xl floating-element golden-text" style="animation-delay: -3s;">🌸</div>
-                <h1 class="text-5xl font-bold mb-4 header-title chinese-font">🇨🇳 学中文</h1>
-                <p class="text-xl opacity-95 header-title font-medium">Impara il Cinese Mandarino</p>
-                <p class="text-base opacity-85 mt-3 header-title chinese-font">你好！欢迎！</p>
-                <p class="text-sm opacity-75 mt-1 header-title">(Nǐ hǎo! Huānyíng! - Ciao! Benvenuto!)</p>
+            <div class="gradient-bg text-white rounded-3xl p-8 mb-8 relative overflow-hidden russian-pattern">
+                <div class="absolute top-4 right-4 text-4xl floating-element golden-text">🏛️</div>
+                <div class="absolute bottom-4 left-4 text-3xl floating-element golden-text" style="animation-delay: -2s;">❄️</div>
+                <div class="absolute top-4 left-4 text-2xl floating-element golden-text" style="animation-delay: -1s;">⭐</div>
+                <div class="absolute bottom-4 right-4 text-2xl floating-element golden-text" style="animation-delay: -3s;">🪆</div>
+                <h1 class="text-5xl font-bold mb-4 header-title cyrillic-font">🇷🇺 Изучай русский</h1>
+                <p class="text-xl opacity-95 header-title font-medium">Impara il Russo</p>
+                <p class="text-base opacity-85 mt-3 header-title cyrillic-font">Добро пожаловать!</p>
+                <p class="text-sm opacity-75 mt-1 header-title">(Dobro pozhalovat'! - Benvenuto!)</p>
                 <div class="unlocked-badge rounded-full px-4 py-2 mt-4 inline-block">
-                    <span class="font-bold">，🏮🈸文🏮</span>
+                    <span class="font-bold">Русский язык</span>
                 </div>
             </div>
         </header>
@@ -126,16 +134,16 @@
         <nav class="flex justify-center mb-8">
             <div class="bg-white rounded-full p-2 shadow-lg">
                 <button onclick="showSection('home')" class="nav-btn px-6 py-3 rounded-full font-medium transition-all duration-300 bg-red-600 text-white">
-                    🏠 主页 (Home)
+                    🏠 Дом (Home)
                 </button>
                 <button onclick="showSection('lessons')" class="nav-btn px-6 py-3 rounded-full font-medium transition-all duration-300 text-gray-600 hover:bg-red-100">
-                    📚 课程 (Lezioni)
+                    📚 Уроки (Lezioni)
                 </button>
                 <button onclick="showSection('exercises')" class="nav-btn px-6 py-3 rounded-full font-medium transition-all duration-300 text-gray-600 hover:bg-red-100">
-                    🎯 练习 (Esercizi)
+                    🎯 Упражнения (Esercizi)
                 </button>
                 <button onclick="showSection('progress')" class="nav-btn px-6 py-3 rounded-full font-medium transition-all duration-300 text-gray-600 hover:bg-red-100">
-                    📊 进步 (Progressi)
+                    📊 Прогресс (Progressi)
                 </button>
             </div>
         </nav>
@@ -146,85 +154,84 @@
                 <!-- Quick Start Card -->
                 <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
                     <div class="text-4xl mb-4">🚀</div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-800 chinese-font">开始学习</h3>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800 cyrillic-font">Начать изучение</h3>
                     <p class="text-sm text-gray-500 mb-2">(Inizia a Studiare)</p>
-                    <p class="text-gray-600 mb-4">Impara i toni e la pronuncia</p>
-                    <p class="text-xs text-gray-500 mb-4">(Impara i toni e la pronuncia)</p>
-                    <button onclick="startLesson(1)" class="bg-gradient-to-r from-red-600 to-yellow-500 text-white px-4 py-2 rounded-lg font-medium hover:shadow-lg transition-all">
-                        开始 (Inizia)
+                    <p class="text-gray-600 mb-4">Impara l'alfabeto cirillico e la pronuncia</p>
+                    <button onclick="startLesson(1)" class="bg-gradient-to-r from-red-600 to-blue-500 text-white px-4 py-2 rounded-lg font-medium hover:shadow-lg transition-all">
+                        Начать (Inizia)
                     </button>
                 </div>
 
                 <!-- Progress Card -->
                 <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
                     <div class="text-4xl mb-4">📈</div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-800 chinese-font">学习进度</h3>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800 cyrillic-font">Прогресс обучения</h3>
                     <p class="text-sm text-gray-500 mb-2">(Progresso di Studio)</p>
                     <div class="mb-4">
                         <div class="flex justify-between text-sm text-gray-600 mb-1">
-                            <span>完成 (Completato)</span>
+                            <span>Завершено (Completato)</span>
                             <span id="progress-percent">100%</span>
                         </div>
                         <div class="bg-gray-200 rounded-full h-2">
-                            <div id="progress-bar" class="bg-gradient-to-r from-red-500 to-yellow-500 h-2 rounded-full" style="width: 100%"></div>
+                            <div id="progress-bar" class="bg-gradient-to-r from-red-500 to-blue-500 h-2 rounded-full" style="width: 100%"></div>
                         </div>
                     </div>
-                    <p class="text-sm text-gray-600">所有课程开放！</p>
+                    <p class="text-sm text-gray-600">Все уроки доступны!</p>
                     <p class="text-xs text-gray-500">(Tutte le lezioni disponibili!)</p>
                 </div>
 
                 <!-- Daily Goal Card -->
                 <div class="bg-white rounded-2xl p-6 shadow-lg card-hover">
                     <div class="text-4xl mb-4">🎯</div>
-                    <h3 class="text-xl font-bold mb-2 text-gray-800 chinese-font">每日目标</h3>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800 cyrillic-font">Ежедневная цель</h3>
                     <p class="text-sm text-gray-500 mb-2">(Obiettivo Giornaliero)</p>
-                    <p class="text-gray-600 mb-4">30分钟学习</p>
+                    <p class="text-gray-600 mb-4 cyrillic-font">30 минут изучения</p>
                     <p class="text-xs text-gray-500 mb-4">(30 minuti di studio)</p>
                     <div class="flex items-center">
-                        <div class="bg-yellow-400 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold mr-2">∞</div>
-                        <span class="text-sm text-gray-600">无限制访问！🔥</span>
+                        <div class="bg-blue-400 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold mr-2">∞</div>
+                        <span class="text-sm text-gray-600">Безлимитный доступ! 🔥</span>
                     </div>
                 </div>
             </div>
 
             <!-- Featured Lessons -->
             <div class="bg-white rounded-2xl p-8 shadow-lg">
-                <h2 class="text-2xl font-bold mb-6 text-gray-800 chinese-font">推荐课程</h2>
+                <h2 class="text-2xl font-bold mb-6 text-gray-800 cyrillic-font">Рекомендуемые уроки</h2>
                 <p class="text-sm text-gray-500 mb-6">(Lezioni Consigliate)</p>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="border-2 border-red-200 rounded-xl p-6 hover:border-red-400 transition-all cursor-pointer" onclick="startLesson(1)">
                         <div class="flex items-center mb-4">
                             <div class="bg-red-100 rounded-full p-3 mr-4">
-                                <span class="text-2xl chinese-font">声调</span>
+                                <span class="text-2xl cyrillic-font">А Б В</span>
                             </div>
                             <div>
-                                <h3 class="font-bold text-lg chinese-font">四声调</h3>
-                                <p class="text-sm text-red-600 mb-1">(I Quattro Toni)</p>
-                                <p class="text-gray-600 text-sm">学习中文的四个基本声调</p>
-                                <p class="text-xs text-gray-500">(Impara i quattro toni base del cinese)</p>
+                                <h3 class="font-bold text-lg cyrillic-font">Русский алфавит</h3>
+                                <p class="text-sm text-red-600 mb-1">(L'Alfabeto Russo)</p>
+                                <p class="text-gray-600 text-sm">Изучите 33 русские буквы</p>
+                                <p class="text-xs text-gray-500">(Impara le 33 lettere russe)</p>
                             </div>
                         </div>
                         <div class="flex justify-between items-center">
-                            <span class="unlocked-badge px-3 py-1 rounded-full text-sm font-bold">开放</span>
-                            <span class="text-red-600 font-medium">25 分钟</span>
+                            <span class="unlocked-badge px-3 py-1 rounded-full text-sm font-bold"> Доступно</span>
+                            <span class="text-red-600 font-medium">25 минут</span>
                         </div>
                     </div>
 
-                    <div class="border-2 border-yellow-200 rounded-xl p-6 hover:border-yellow-400 transition-all cursor-pointer" onclick="startLesson(2)">
+                    <div class="border-2 border-blue-200 rounded-xl p-6 hover:border-blue-400 transition-all cursor-pointer" onclick="startLesson(2)">
                         <div class="flex items-center mb-4">
-                            <div class="bg-yellow-100 rounded-full p-3 mr-4">
+                            <div class="bg-blue-100 rounded-full p-3 mr-4">
                                 <span class="text-2xl">👋</span>
                             </div>
                             <div>
-                                <h3 class="font-bold text-lg chinese-font">问候语</h3>
-                                <p class="text-sm text-yellow-600 mb-1">(Saluti)</p>
-                                <p class="text-gray-600 text-sm">基本问候和礼貌用语</p>
-                                <p class="text-xs text-gray-500">(Saluti di base e espressioni di cortesia)</p>
+                                <h3 class="font-bold text-lg cyrillic-font">Приветствия</h3>
+                                <p class="text-sm text-blue-600 mb-1">(Saluti)</p>
+                                <p class="text-gray-600 text-sm cyrillic-font">Основные приветствия и вежливость</p>
+                                <p class="text-xs text-gray-500">(Saluti di base e cortesia)</p>
                             </div>
                         </div>
                         <div class="flex justify-between items-center">
-                            <span class="unlocked-badge px-3 py-1 rounded-full text-sm font-bold">开放</span>
-                            <span class="text-yellow-600 font-medium">20 分钟</span>
+                            <span class="unlocked-badge px-3 py-1 rounded-full text-sm font-bold"> Доступно</span>
+                            <span class="text-blue-600 font-medium">20 минут</span>
                         </div>
                     </div>
                 </div>
@@ -234,8 +241,8 @@
         <!-- Lessons Section -->
         <div id="lessons-section" class="section hidden">
             <div class="bg-white rounded-2xl p-8 shadow-lg">
-                <h2 class="text-3xl font-bold mb-4 text-center text-gray-800 chinese-font">📚 中文课程</h2>
-                <p class="text-center text-gray-500 mb-8">(Lezioni di Cinese)</p>
+                <h2 class="text-3xl font-bold mb-4 text-center text-gray-800 cyrillic-font">📚 Уроки русского языка</h2>
+                <p class="text-center text-gray-500 mb-8">(Lezioni di Russo)</p>
                 
                 <div class="grid gap-6">
                     <!-- Lesson 1 -->
@@ -244,32 +251,32 @@
                             <div class="flex items-center">
                                 <div class="bg-red-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">1</div>
                                 <div>
-                                    <h3 class="text-xl font-bold chinese-font">四声调 - I Quattro Toni</h3>
-                                    <p class="text-gray-600">一声 (ā) 二声 (á) 三声 (ǎ) 四声 (à)</p>
-                                    <p class="text-sm text-gray-500">I quattro toni fondamentali del cinese mandarino</p>
+                                    <h3 class="text-xl font-bold cyrillic-font">Русский алфавит - L'Alfabeto Russo</h3>
+                                    <p class="text-gray-600 cyrillic-font">А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я</p>
+                                    <p class="text-sm text-gray-500">Le 33 lettere dell'alfabeto cirillico</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> 开放</div>
-                                <span class="text-red-600 font-medium">25 分钟</span>
+                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> Доступно</div>
+                                <span class="text-red-600 font-medium">25 минут</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Lesson 2 -->
-                    <div class="border-2 border-yellow-200 rounded-xl p-6 card-hover cursor-pointer" onclick="startLesson(2)">
+                    <div class="border-2 border-blue-200 rounded-xl p-6 card-hover cursor-pointer" onclick="startLesson(2)">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <div class="bg-yellow-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">2</div>
+                                <div class="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">2</div>
                                 <div>
-                                    <h3 class="text-xl font-bold chinese-font">问候语 - Saluti</h3>
-                                    <p class="text-gray-600 chinese-font">你好, 早上好, 晚上好, 谢谢, 不客气</p>
+                                    <h3 class="text-xl font-bold cyrillic-font">Приветствия - Saluti</h3>
+                                    <p class="text-gray-600 cyrillic-font">Привет, Здравствуйте, Спасибо, Пожалуйста</p>
                                     <p class="text-sm text-gray-500">Saluti e espressioni di cortesia essenziali</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> 开放</div>
-                                <span class="text-yellow-600 font-medium">20 分钟</span>
+                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> Доступно</div>
+                                <span class="text-blue-600 font-medium">20 минут</span>
                             </div>
                         </div>
                     </div>
@@ -280,68 +287,68 @@
                             <div class="flex items-center">
                                 <div class="bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">3</div>
                                 <div>
-                                    <h3 class="text-xl font-bold chinese-font">数字 - Numeri</h3>
-                                    <p class="text-gray-600 chinese-font">一, 二, 三, 四, 五, 六, 七, 八, 九, 十</p>
-                                    <p class="text-sm text-gray-500">Numeri da 1 a 100 in cinese</p>
+                                    <h3 class="text-xl font-bold cyrillic-font">Числа - Numeri</h3>
+                                    <p class="text-gray-600 cyrillic-font">один, два, три, четыре, пять, шесть, семь, восемь, девять, десять</p>
+                                    <p class="text-sm text-gray-500">Numeri da 1 a 100 in russo</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> 开放</div>
-                                <span class="text-green-600 font-medium">30 分钟</span>
+                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> Доступно</div>
+                                <span class="text-green-600 font-medium">30 минут</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Lesson 4 -->
-                    <div class="border-2 border-blue-200 rounded-xl p-6 card-hover cursor-pointer" onclick="startLesson(4)">
+                    <div class="border-2 border-purple-200 rounded-xl p-6 card-hover cursor-pointer" onclick="startLesson(4)">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <div class="bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">4</div>
+                                <div class="bg-purple-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">4</div>
                                 <div>
-                                    <h3 class="text-xl font-bold chinese-font">颜色 - Colori</h3>
-                                    <p class="text-gray-600 chinese-font">红色, 蓝色, 黄色, 绿色, 黑色, 白色</p>
-                                    <p class="text-sm text-gray-500">Tutti i colori principali in cinese</p>
+                                    <h3 class="text-xl font-bold cyrillic-font">Цвета - Colori</h3>
+                                    <p class="text-gray-600 cyrillic-font">красный, синий, жёлтый, зелёный, чёрный, белый</p>
+                                    <p class="text-sm text-gray-500">Tutti i colori principali in russo</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> 开放</div>
-                                <span class="text-blue-600 font-medium">18 分钟</span>
+                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> Доступно</div>
+                                <span class="text-purple-600 font-medium">18 минут</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Lesson 5 -->
-                    <div class="border-2 border-purple-200 rounded-xl p-6 card-hover cursor-pointer" onclick="startLesson(5)">
+                    <div class="border-2 border-orange-200 rounded-xl p-6 card-hover cursor-pointer" onclick="startLesson(5)">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <div class="bg-purple-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">5</div>
+                                <div class="bg-orange-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">5</div>
                                 <div>
-                                    <h3 class="text-xl font-bold chinese-font">家庭 - Famiglia</h3>
-                                    <p class="text-gray-600 chinese-font">妈妈, 爸爸, 哥哥, 姐姐, 弟弟, 妹妹</p>
+                                    <h3 class="text-xl font-bold cyrillic-font">Семья - Famiglia</h3>
+                                    <p class="text-gray-600 cyrillic-font">мама, папа, брат, сестра, дедушка, бабушка, сын, дочь</p>
                                     <p class="text-sm text-gray-500">Membri della famiglia e relazioni</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> 开放</div>
-                                <span class="text-purple-600 font-medium">25 分钟</span>
+                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> Доступно</div>
+                                <span class="text-orange-600 font-medium">25 минут</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Lesson 6 -->
-                    <div class="border-2 border-orange-200 rounded-xl p-6 card-hover cursor-pointer" onclick="startLesson(6)">
+                    <div class="border-2 border-teal-200 rounded-xl p-6 card-hover cursor-pointer" onclick="startLesson(6)">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <div class="bg-orange-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">6</div>
+                                <div class="bg-teal-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">6</div>
                                 <div>
-                                    <h3 class="text-xl font-bold chinese-font">食物 - Cibo</h3>
-                                    <p class="text-gray-600 chinese-font">米饭, 面条, 水, 茶, 肉, 鱼, 水果</p>
+                                    <h3 class="text-xl font-bold cyrillic-font">Еда - Cibo</h3>
+                                    <p class="text-gray-600 cyrillic-font">хлеб, молоко, мясо, рыба, овощи, фрукты, борщ</p>
                                     <p class="text-sm text-gray-500">Cibi e bevande essenziali</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> 开放</div>
-                                <span class="text-orange-600 font-medium">22 分钟</span>
+                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> Доступно</div>
+                                <span class="text-teal-600 font-medium">22 минуты</span>
                             </div>
                         </div>
                     </div>
@@ -352,32 +359,32 @@
                             <div class="flex items-center">
                                 <div class="bg-indigo-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">7</div>
                                 <div>
-                                    <h3 class="text-xl font-bold chinese-font">时间 - Tempo</h3>
-                                    <p class="text-gray-600 chinese-font">今天, 明天, 昨天, 小时, 分钟, 星期</p>
+                                    <h3 class="text-xl font-bold cyrillic-font">Время - Tempo</h3>
+                                    <p class="text-gray-600 cyrillic-font">сегодня, завтра, вчера, час, минута, неделя</p>
                                     <p class="text-sm text-gray-500">Espressioni di tempo e calendario</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> 开放</div>
-                                <span class="text-indigo-600 font-medium">28 分钟</span>
+                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> Доступно</div>
+                                <span class="text-indigo-600 font-medium">28 минут</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Lesson 8 -->
-                    <div class="border-2 border-teal-200 rounded-xl p-6 card-hover cursor-pointer" onclick="startLesson(8)">
+                    <div class="border-2 border-pink-200 rounded-xl p-6 card-hover cursor-pointer" onclick="startLesson(8)">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
-                                <div class="bg-teal-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">8</div>
+                                <div class="bg-pink-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold mr-4">8</div>
                                 <div>
-                                    <h3 class="text-xl font-bold chinese-font">动词 - Verbi</h3>
-                                    <p class="text-gray-600 chinese-font">来, 去, 做, 是, 有, 吃, 喝, 看</p>
+                                    <h3 class="text-xl font-bold cyrillic-font">Глаголы - Verbi</h3>
+                                    <p class="text-gray-600 cyrillic-font">идти, делать, быть, есть, пить, видеть, говорить</p>
                                     <p class="text-sm text-gray-500">Verbi essenziali e uso base</p>
                                 </div>
                             </div>
                             <div class="text-right">
-                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> 开放</div>
-                                <span class="text-teal-600 font-medium">35 分钟</span>
+                                <div class="unlocked-badge px-3 py-1 rounded-full text-sm mb-2 font-bold"> Доступно</div>
+                                <span class="text-pink-600 font-medium">35 минут</span>
                             </div>
                         </div>
                     </div>
@@ -388,31 +395,31 @@
         <!-- Exercises Section -->
         <div id="exercises-section" class="section hidden">
             <div class="bg-white rounded-2xl p-8 shadow-lg">
-                <h2 class="text-3xl font-bold mb-4 text-center text-gray-800 chinese-font">🎯 互动练习</h2>
+                <h2 class="text-3xl font-bold mb-4 text-center text-gray-800 cyrillic-font">🎯 Интерактивные упражнения</h2>
                 <p class="text-center text-gray-500 mb-8">(Esercizi Interattivi)</p>
                 
                 <div class="grid md:grid-cols-2 gap-6 mb-8">
-                    <div class="chinese-bg rounded-xl p-6 card-hover cursor-pointer" onclick="startExercise('hanzi')">
+                    <div class="russian-bg rounded-xl p-6 card-hover cursor-pointer" onclick="startExercise('cyrillic')">
                         <div class="text-4xl mb-4">📝</div>
-                        <h3 class="text-xl font-bold mb-2 chinese-font">汉字识别</h3>
-                        <p class="text-sm text-red-600 mb-2">(Riconoscimento Caratteri)</p>
-                        <p class="text-gray-600 mb-4">识别汉字并匹配意思</p>
-                        <p class="text-xs text-gray-500 mb-4">(Riconosci i caratteri cinesi e abbina i significati)</p>
+                        <h3 class="text-xl font-bold mb-2 cyrillic-font">Распознавание букв</h3>
+                        <p class="text-sm text-red-600 mb-2">(Riconoscimento Lettere)</p>
+                        <p class="text-gray-600 mb-4 cyrillic-font">Распознавание кириллических букв и значений</p>
+                        <p class="text-xs text-gray-500 mb-4">(Riconosci le lettere cirilliche e abbina i significati)</p>
                         <div class="flex justify-between items-center">
-                            <span class="unlocked-badge px-3 py-1 rounded-full text-sm font-bold">开放</span>
-                            <span class="text-red-600 font-medium">15 分钟</span>
+                            <span class="unlocked-badge px-3 py-1 rounded-full text-sm font-bold"> Доступно</span>
+                            <span class="text-red-600 font-medium">15 минут</span>
                         </div>
                     </div>
 
-                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6 card-hover cursor-pointer" onclick="startExercise('tones')">
+                    <div class="bg-gradient-to-br from-blue-50 to-red-50 rounded-xl p-6 card-hover cursor-pointer" onclick="startExercise('pronunciation')">
                         <div class="text-4xl mb-4">🎵</div>
-                        <h3 class="text-xl font-bold mb-2 chinese-font">声调练习</h3>
-                        <p class="text-sm text-yellow-600 mb-2">(Pratica dei Toni)</p>
-                        <p class="text-gray-600 mb-4">练习四个声调的发音</p>
-                        <p class="text-xs text-gray-500 mb-4">(Pratica la pronuncia dei quattro toni)</p>
+                        <h3 class="text-xl font-bold mb-2 cyrillic-font">Практика произношения</h3>
+                        <p class="text-sm text-blue-600 mb-2">(Pratica Pronuncia)</p>
+                        <p class="text-gray-600 mb-4 cyrillic-font">Практика произношения русских звуков</p>
+                        <p class="text-xs text-gray-500 mb-4">(Pratica la pronuncia dei suoni russi)</p>
                         <div class="flex justify-between items-center">
-                            <span class="unlocked-badge px-3 py-1 rounded-full text-sm font-bold"> 开放</span>
-                            <span class="text-yellow-600 font-medium">20 分钟</span>
+                            <span class="unlocked-badge px-3 py-1 rounded-full text-sm font-bold"> Доступно</span>
+                            <span class="text-blue-600 font-medium">20 минут</span>
                         </div>
                     </div>
                 </div>
@@ -420,40 +427,23 @@
                 <!-- Sample Exercise -->
                 <div id="exercise-area" class="bg-gray-50 rounded-xl p-8">
                     <div class="text-center">
-                        <h3 class="text-2xl font-bold mb-2 text-gray-800 chinese-font">练习：汉字识别</h3>
-                        <p class="text-sm text-gray-500 mb-6">(Esercizio: Riconoscimento Caratteri)</p>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-800 cyrillic-font">Упражнение: Распознавание слов</h3>
+                        <p class="text-sm text-gray-500 mb-6">(Esercizio: Riconoscimento Parole)</p>
                         <div class="bg-white rounded-xl p-8 mb-6 shadow-inner">
-                            <div class="hanzi-display mb-4 pulse-animation text-red-600 chinese-font" id="exercise-hanzi">你好</div>
+                            <div class="cyrillic-display mb-4 pulse-animation text-red-600 cyrillic-font" id="exercise-russian"></div>
                             <div class="pronunciation-badge rounded-full px-4 py-2 mb-6 inline-block">
-                                <span class="font-bold text-amber-800" id="exercise-pinyin">nǐ hǎo</span>
+                                <span class="font-bold text-amber-800" id="exercise-pronunciation"></span>
                             </div>
-                            <p class="text-lg text-gray-600 mb-8">这个中文词是什么意思？</p>
-                            <p class="text-sm text-gray-500 mb-8">(Cosa significa questa parola cinese?)</p>
+                            <p class="text-lg text-gray-600 mb-8 cyrillic-font">Что означает это русское слово?</p>
+                            <p class="text-sm text-gray-500 mb-8">(Cosa significa questa parola russa?)</p>
                             
-                            <div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
-                                <button onclick="checkAnswer('ciao')" class="exercise-option bg-red-100 hover:bg-red-200 text-red-800 py-4 px-6 rounded-xl font-medium transition-all">
-                                    Ciao
-                                </button>
-                                <button onclick="checkAnswer('grazie')" class="exercise-option bg-blue-100 hover:bg-blue-200 text-blue-800 py-4 px-6 rounded-xl font-medium transition-all">
-                                    Grazie
-                                </button>
-                                <button onclick="checkAnswer('arrivederci')" class="exercise-option bg-green-100 hover:bg-green-200 text-green-800 py-4 px-6 rounded-xl font-medium transition-all">
-                                    Arrivederci
-                                </button>
-                                <button onclick="checkAnswer('prego')" class="exercise-option bg-purple-100 hover:bg-purple-200 text-purple-800 py-4 px-6 rounded-xl font-medium transition-all">
-                                    Prego
-                                </button>
+                            <div class="grid grid-cols-2 gap-4 max-w-md mx-auto" id="exercise-options-container">
+                                <!-- Options will be dynamically loaded here -->
                             </div>
                         </div>
                         
                         <div id="exercise-feedback" class="hidden">
-                            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-xl mb-4">
-                                <strong>正确！🎉</strong> "你好" significa "Ciao" in italiano
-                                <br><span class="text-sm">(Corretto! "你好" vuol dire "Ciao")</span>
-                            </div>
-                            <button onclick="nextExercise()" class="bg-gradient-to-r from-red-500 to-yellow-500 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all">
-                                下一题 → (Prossima Domanda)
-                            </button>
+                            <!-- Feedback will appear here -->
                         </div>
                     </div>
                 </div>
@@ -463,71 +453,84 @@
         <!-- Progress Section -->
         <div id="progress-section" class="section hidden">
             <div class="bg-white rounded-2xl p-8 shadow-lg">
-                <h2 class="text-3xl font-bold mb-4 text-center text-gray-800 chinese-font">📊 学习进度</h2>
+                <h2 class="text-3xl font-bold mb-4 text-center text-gray-800 cyrillic-font">📊 Прогресс обучения</h2>
                 <p class="text-center text-gray-500 mb-8">(Stato dei Progressi)</p>
                 
                 <div class="grid md:grid-cols-3 gap-6 mb-8">
                     <div class="text-center">
                         <div class="bg-gradient-to-br from-red-600 to-red-500 text-white rounded-2xl p-6">
                             <div class="text-3xl font-bold">8</div>
-                            <div class="text-sm opacity-90 chinese-font">完成的课程</div>
+                            <div class="text-sm opacity-90 cyrillic-font">Завершённые уроки</div>
                             <div class="text-xs opacity-75">(Lezioni Completate)</div>
                         </div>
                     </div>
                     <div class="text-center">
-                        <div class="bg-gradient-to-br from-yellow-500 to-red-500 text-white rounded-2xl p-6">
+                        <div class="bg-gradient-to-br from-blue-500 to-red-500 text-white rounded-2xl p-6">
                             <div class="text-3xl font-bold">200+</div>
-                            <div class="text-sm opacity-90 chinese-font">学会的汉字</div>
-                            <div class="text-xs opacity-75">(Caratteri Imparati)</div>
+                            <div class="text-sm opacity-90 cyrillic-font">Изученные слова</div>
+                            <div class="text-xs opacity-75">(Parole Imparate)</div>
                         </div>
                     </div>
                     <div class="text-center">
-                        <div class="bg-gradient-to-br from-orange-500 to-yellow-500 text-white rounded-2xl p-6">
+                        <div class="bg-gradient-to-br from-purple-500 to-blue-500 text-white rounded-2xl p-6">
                             <div class="text-3xl font-bold">∞</div>
-                            <div class="text-sm opacity-90 chinese-font">无限制访问</div>
+                            <div class="text-sm opacity-90 cyrillic-font">Безлимитный доступ</div>
                             <div class="text-xs opacity-75">(Accesso Illimitato)</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Tones Progress -->
-                    <div class="bg-gradient-to-br from-red-50 to-yellow-50 rounded-xl p-6">
-                        <h3 class="text-xl font-bold mb-2 text-red-700 chinese-font">声调掌握</h3>
-                        <p class="text-sm text-red-600 mb-4">(Padronanza dei Toni)</p>
-                        <div class="grid grid-cols-4 gap-2 mb-4">
-                            <div class="bg-red-100 border-2 border-red-400 rounded-lg p-3 text-center">
-                                <div class="text-lg font-bold tone-1">ā</div>
-                                <div class="text-xs text-red-700">一声</div>
-                                <div class="text-xs text-red-700">✓</div>
-                            </div>
-                            <div class="bg-yellow-100 border-2 border-yellow-400 rounded-lg p-3 text-center">
-                                <div class="text-lg font-bold tone-2">á</div>
-                                <div class="text-xs text-yellow-700">二声</div>
-                                <div class="text-xs text-yellow-700">✓</div>
-                            </div>
-                            <div class="bg-green-100 border-2 border-green-400 rounded-lg p-3 text-center">
-                                <div class="text-lg font-bold tone-3">ǎ</div>
-                                <div class="text-xs text-green-700">三声</div>
-                                <div class="text-xs text-green-700">✓</div>
-                            </div>
-                            <div class="bg-blue-100 border-2 border-blue-400 rounded-lg p-3 text-center">
-                                <div class="text-lg font-bold tone-4">à</div>
-                                <div class="text-xs text-blue-700">四声</div>
-                                <div class="text-xs text-blue-700">✓</div>
-                            </div>
+                    <!-- Alphabet Progress -->
+                    <div class="bg-gradient-to-br from-red-50 to-blue-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-2 text-red-700 cyrillic-font">Владение алфавитом</h3>
+                        <p class="text-sm text-red-600 mb-4">(Padronanza Alfabeto)</p>
+                        <div class="grid grid-cols-11 gap-1 mb-4 text-center">
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">А</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Б</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">В</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Г</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Д</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Е</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Ё</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Ж</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">З</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">И</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Й</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">К</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Л</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">М</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Н</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">О</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">П</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Р</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">С</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Т</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">У</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Ф</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Х</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Ц</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Ч</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Ш</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Щ</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Ъ</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Ы</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Ь</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Э</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Ю</div>
+                            <div class="bg-red-100 border border-red-400 rounded p-1 text-xs cyrillic-font">Я</div>
                         </div>
-                        <p class="text-sm text-gray-600">四个声调全部掌握！</p>
-                        <p class="text-xs text-gray-500">(Tutti e quattro i toni padroneggiati!)</p>
+                        <p class="text-sm text-gray-600 cyrillic-font">Все 33 буквы освоены!</p>
+                        <p class="text-xs text-gray-500">(Tutte le 33 lettere padroneggiate!)</p>
                     </div>
 
                     <!-- Vocabulary Progress -->
-                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6">
-                        <h3 class="text-xl font-bold mb-2 text-yellow-700 chinese-font">词汇量</h3>
-                        <p class="text-sm text-yellow-600 mb-4">(Vocabolario)</p>
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-2 text-blue-700 cyrillic-font">Словарный запас</h3>
+                        <p class="text-sm text-blue-600 mb-4">(Vocabolario)</p>
                         <div class="space-y-3">
                             <div class="flex justify-between items-center">
-                                <span class="text-sm chinese-font">问候语</span>
+                                <span class="text-sm cyrillic-font">Приветствия</span>
                                 <div class="flex items-center">
                                     <div class="bg-green-200 rounded-full h-2 w-16 mr-2">
                                         <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
@@ -536,16 +539,16 @@
                                 </div>
                             </div>
                             <div class="flex justify-between items-center">
-                                <span class="text-sm chinese-font">数字</span>
+                                <span class="text-sm cyrillic-font">Числа</span>
                                 <div class="flex items-center">
                                     <div class="bg-green-200 rounded-full h-2 w-16 mr-2">
                                         <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
                                     </div>
-                                    <span class="text-xs text-green-600">20/20</span>
+                                    <span class="text-xs text-green-600">25/25</span>
                                 </div>
                             </div>
                             <div class="flex justify-between items-center">
-                                <span class="text-sm chinese-font">颜色</span>
+                                <span class="text-sm cyrillic-font">Цвета</span>
                                 <div class="flex items-center">
                                     <div class="bg-green-200 rounded-full h-2 w-16 mr-2">
                                         <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
@@ -554,7 +557,7 @@
                                 </div>
                             </div>
                             <div class="flex justify-between items-center">
-                                <span class="text-sm chinese-font">家庭</span>
+                                <span class="text-sm cyrillic-font">Семья</span>
                                 <div class="flex items-center">
                                     <div class="bg-green-200 rounded-full h-2 w-16 mr-2">
                                         <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
@@ -563,23 +566,23 @@
                                 </div>
                             </div>
                             <div class="flex justify-between items-center">
-                                <span class="text-sm chinese-font">食物</span>
+                                <span class="text-sm cyrillic-font">Еда</span>
                                 <div class="flex items-center">
                                     <div class="bg-green-200 rounded-full h-2 w-16 mr-2">
                                         <div class="bg-green-500 h-2 rounded-full" style="width: 100%"></div>
                                     </div>
-                                    <span class="text-xs text-green-600">25/25</span>
+                                    <span class="text-xs text-green-600">20/20</span>
                                 </div>
                             </div>
                         </div>
-                        <p class="text-sm text-gray-600 mt-4">总计：200+ 汉字学会！</p>
-                        <p class="text-xs text-gray-500">(Totale: 200+ caratteri imparati!)</p>
+                        <p class="text-sm text-gray-600 mt-4 cyrillic-font">Итого: 200+ изученных слов!</p>
+                        <p class="text-xs text-gray-500">(Totale: 200+ parole imparate!)</p>
                     </div>
                 </div>
                 
                 <div class="mt-6 text-center">
                     <div class="unlocked-badge rounded-full px-6 py-3 inline-block">
-                        <span class="font-bold text-lg chinese-font">🎉 所有内容开放！🎉</span>
+                        <span class="font-bold text-lg cyrillic-font">🎉 Весь контент доступен! 🎉</span>
                         <br>
                         <span class="text-sm">(Tutto il contenuto è sbloccato!)</span>
                     </div>
@@ -614,159 +617,196 @@
                 clickedButton.classList.add('bg-red-600', 'text-white');
                 clickedButton.classList.remove('text-gray-600', 'hover:bg-red-100');
             }
+
+            // If navigating to exercises, reset and load the first exercise
+            if (sectionName === 'exercises') {
+                nextExercise();
+            }
         }
 
         // Lesson functions
         function startLesson(lessonNumber) {
             const lessons = {
                 1: {
-                    title: '四声调 (I Quattro Toni)',
-                    description: '中文的四个基本声调 - I quattro toni fondamentali del cinese',
+                    title: 'Русский алфавит (L\'Alfabeto Russo)',
+                    description: 'Кириллические буквы А-Я - Le lettere cirilliche A-Я',
                     content: [
-                        {tone: '一声', pinyin: 'ā', description: '高平调 (Alto e piatto)', example: '妈 (mā) - madre', color: 'tone-1'},
-                        {tone: '二声', pinyin: 'á', description: '上升调 (Ascendente)', example: '麻 (má) - canapa', color: 'tone-2'},
-                        {tone: '三声', pinyin: 'ǎ', description: '降升调 (Discendente-ascendente)', example: '马 (mǎ) - cavallo', color: 'tone-3'},
-                        {tone: '四声', pinyin: 'à', description: '下降调 (Discendente)', example: '骂 (mà) - rimproverare', color: 'tone-4'},
-                        {tone: '轻声', pinyin: 'a', description: '中性调 (Neutro)', example: '吗 (ma) - particella interrogativa', color: 'tone-neutral'}
+                        {cyrillic: 'А', name: 'А', pronunciation: 'a', italian: 'A'},
+                        {cyrillic: 'Б', name: 'Бэ', pronunciation: 'b', italian: 'B'},
+                        {cyrillic: 'В', name: 'Вэ', pronunciation: 'v', italian: 'V'},
+                        {cyrillic: 'Г', name: 'Гэ', pronunciation: 'g', italian: 'G'},
+                        {cyrillic: 'Д', name: 'Дэ', pronunciation: 'd', italian: 'D'},
+                        {cyrillic: 'Е', name: 'Е', pronunciation: 'ye', italian: 'Ye'},
+                        {cyrillic: 'Ё', name: 'Ё', pronunciation: 'yo', italian: 'Yo'},
+                        {cyrillic: 'Ж', name: 'Жэ', pronunciation: 'zh', italian: 'Zh'},
+                        {cyrillic: 'З', name: 'Зэ', pronunciation: 'z', italian: 'Z'},
+                        {cyrillic: 'И', name: 'И', pronunciation: 'i', italian: 'I'},
+                        {cyrillic: 'Й', name: 'И краткое', pronunciation: 'y', italian: 'Y'},
+                        {cyrillic: 'К', name: 'Ка', pronunciation: 'k', italian: 'K'},
+                        {cyrillic: 'Л', name: 'Эль', pronunciation: 'l', italian: 'L'},
+                        {cyrillic: 'М', name: 'Эм', pronunciation: 'm', italian: 'M'},
+                        {cyrillic: 'Н', name: 'Эн', pronunciation: 'n', italian: 'N'},
+                        {cyrillic: 'О', name: 'О', pronunciation: 'o', italian: 'O'},
+                        {cyrillic: 'П', name: 'Пэ', pronunciation: 'p', italian: 'P'},
+                        {cyrillic: 'Р', name: 'Эр', pronunciation: 'r', italian: 'R'},
+                        {cyrillic: 'С', name: 'Эс', pronunciation: 's', italian: 'S'},
+                        {cyrillic: 'Т', name: 'Тэ', pronunciation: 't', italian: 'T'},
+                        {cyrillic: 'У', name: 'У', pronunciation: 'u', italian: 'U'},
+                        {cyrillic: 'Ф', name: 'Эф', pronunciation: 'f', italian: 'F'},
+                        {cyrillic: 'Х', name: 'Ха', pronunciation: 'kh', italian: 'Kh'},
+                        {cyrillic: 'Ц', name: 'Цэ', pronunciation: 'ts', italian: 'Ts'},
+                        {cyrillic: 'Ч', name: 'Че', pronunciation: 'ch', italian: 'Ch'},
+                        {cyrillic: 'Ш', name: 'Ша', pronunciation: 'sh', italian: 'Sh'},
+                        {cyrillic: 'Щ', name: 'Ща', pronunciation: 'shch', italian: 'Shch'},
+                        {cyrillic: 'Ъ', name: 'Твёрдый знак', pronunciation: '(segno duro)', italian: 'Segno duro'},
+                        {cyrillic: 'Ы', name: 'Ы', pronunciation: 'y', italian: 'Y'},
+                        {cyrillic: 'Ь', name: 'Мягкий знак', pronunciation: '(segno molle)', italian: 'Segno molle'},
+                        {cyrillic: 'Э', name: 'Э', pronunciation: 'e', italian: 'E'},
+                        {cyrillic: 'Ю', name: 'Ю', pronunciation: 'yu', italian: 'Yu'},
+                        {cyrillic: 'Я', name: 'Я', pronunciation: 'ya', italian: 'Ya'}
                     ]
                 },
                 2: {
-                    title: '问候语 (Saluti)',
-                    description: '基本问候和礼貌用语 - Saluti di base e espressioni di cortesia',
+                    title: 'Приветствия (Saluti)',
+                    description: 'Основные приветствия и вежливость - Saluti di base e espressioni di cortesia',
                     content: [
-                        {chinese: '你好', pinyin: 'nǐ hǎo', italian: 'Ciao/Salve'},
-                        {chinese: '早上好', pinyin: 'zǎo shàng hǎo', italian: 'Buongiorno (mattina)'},
-                        {chinese: '下午好', pinyin: 'xià wǔ hǎo', italian: 'Buon pomeriggio'},
-                        {chinese: '晚上好', pinyin: 'wǎn shàng hǎo', italian: 'Buonasera'},
-                        {chinese: '晚安', pinyin: 'wǎn ān', italian: 'Buonanotte'},
-                        {chinese: '欢迎', pinyin: 'huān yíng', italian: 'Benvenuto'},
-                        {chinese: '谢谢', pinyin: 'xiè xiè', italian: 'Grazie'},
-                        {chinese: '不客气', pinyin: 'bù kè qì', italian: 'Prego'},
-                        {chinese: '对不起', pinyin: 'duì bù qǐ', italian: 'Mi scusi'},
-                        {chinese: '再见', pinyin: 'zài jiàn', italian: 'Arrivederci'},
-                        {chinese: '拜拜', pinyin: 'bái bái', italian: 'Ciao (informale)'},
-                        {chinese: '请', pinyin: 'qǐng', italian: 'Per favore'}
+                        {cyrillic: 'Привет', pronunciation: 'privet', italian: 'Ciao (informale)'},
+                        {cyrillic: 'Здравствуйте', pronunciation: 'zdravstvuyte', italian: 'Buongiorno (formale)'},
+                        {cyrillic: 'Добро пожаловать', pronunciation: 'dobro pozhalovat\'', italian: 'Benvenuto'},
+                        {cyrillic: 'Доброе утро', pronunciation: 'dobroye utro', italian: 'Buongiorno'},
+                        {cyrillic: 'Добрый день', pronunciation: 'dobryy den\'', italian: 'Buon pomeriggio'},
+                        {cyrillic: 'Добрый вечер', pronunciation: 'dobryy vecher', italian: 'Buonasera'},
+                        {cyrillic: 'Спокойной ночи', pronunciation: 'spokoynoy nochi', italian: 'Buonanotte'},
+                        {cyrillic: 'Спасибо', pronunciation: 'spasibo', italian: 'Grazie'},
+                        {cyrillic: 'Большое спасибо', pronunciation: 'bol\'shoye spasibo', italian: 'Grazie mille'},
+                        {cyrillic: 'Пожалуйста', pronunciation: 'pozhaluysta', italian: 'Prego'},
+                        {cyrillic: 'Извините', pronunciation: 'izvinite', italian: 'Mi scusi'},
+                        {cyrillic: 'Простите', pronunciation: 'prostite', italian: 'Mi perdoni'},
+                        {cyrillic: 'До свидания', pronunciation: 'do svidaniya', italian: 'Arrivederci'},
+                        {cyrillic: 'Пока', pronunciation: 'poka', italian: 'Ciao (addio)'},
+                        {cyrillic: 'Увидимся', pronunciation: 'uvidimsya', italian: 'Ci vediamo'}
                     ]
                 },
                 3: {
-                    title: '数字 (Numeri)',
-                    description: '中文数字 1-100 - Numeri cinesi 1-100',
+                    title: 'Числа (Numeri)',
+                    description: 'Русские числа 1-100 - Numeri russi 1-100',
                     content: [
-                        {chinese: '一', pinyin: 'yī', italian: 'Uno', number: '1'},
-                        {chinese: '二', pinyin: 'èr', italian: 'Due', number: '2'},
-                        {chinese: '三', pinyin: 'sān', italian: 'Tre', number: '3'},
-                        {chinese: '四', pinyin: 'sì', italian: 'Quattro', number: '4'},
-                        {chinese: '五', pinyin: 'wǔ', italian: 'Cinque', number: '5'},
-                        {chinese: '六', pinyin: 'liù', italian: 'Sei', number: '6'},
-                        {chinese: '七', pinyin: 'qī', italian: 'Sette', number: '7'},
-                        {chinese: '八', pinyin: 'bā', italian: 'Otto', number: '8'},
-                        {chinese: '九', pinyin: 'jiǔ', italian: 'Nove', number: '9'},
-                        {chinese: '十', pinyin: 'shí', italian: 'Dieci', number: '10'},
-                        {chinese: '二十', pinyin: 'èr shí', italian: 'Venti', number: '20'},
-                        {chinese: '三十', pinyin: 'sān shí', italian: 'Trenta', number: '30'},
-                        {chinese: '五十', pinyin: 'wǔ shí', italian: 'Cinquanta', number: '50'},
-                        {chinese: '一百', pinyin: 'yī bǎi', italian: 'Cento', number: '100'}
+                        {cyrillic: 'один', pronunciation: 'odin', italian: 'Uno', number: '1'},
+                        {cyrillic: 'два', pronunciation: 'dva', italian: 'Due', number: '2'},
+                        {cyrillic: 'три', pronunciation: 'tri', italian: 'Tre', number: '3'},
+                        {cyrillic: 'четыре', pronunciation: 'chetyre', italian: 'Quattro', number: '4'},
+                        {cyrillic: 'пять', pronunciation: 'pyat\'', italian: 'Cinque', number: '5'},
+                        {cyrillic: 'шесть', pronunciation: 'shest\'', italian: 'Sei', number: '6'},
+                        {cyrillic: 'семь', pronunciation: 'sem\'', italian: 'Sette', number: '7'},
+                        {cyrillic: 'восемь', pronunciation: 'vosem\'', italian: 'Otto', number: '8'},
+                        {cyrillic: 'девять', pronunciation: 'devyat\'', italian: 'Nove', number: '9'},
+                        {cyrillic: 'десять', pronunciation: 'desyat\'', italian: 'Dieci', number: '10'},
+                        {cyrillic: 'двадцать', pronunciation: 'dvadtsat\'', italian: 'Venti', number: '20'},
+                        {cyrillic: 'тридцать', pronunciation: 'tridtsat\'', italian: 'Trenta', number: '30'},
+                        {cyrillic: 'пятьдесят', pronunciation: 'pyat\'desyat', italian: 'Cinquanta', number: '50'},
+                        {cyrillic: 'сто', pronunciation: 'sto', italian: 'Cento', number: '100'}
                     ]
                 },
                 4: {
-                    title: '颜色 (Colori)',
-                    description: '基本颜色中文 - Colori di base in cinese',
+                    title: 'Цвета (Colori)',
+                    description: 'Основные цвета по-русски - Colori di base in russo',
                     content: [
-                        {chinese: '红色', pinyin: 'hóng sè', italian: 'Rosso', color: '#dc2626'},
-                        {chinese: '蓝色', pinyin: 'lán sè', italian: 'Blu', color: '#2563eb'},
-                        {chinese: '黄色', pinyin: 'huáng sè', italian: 'Giallo', color: '#eab308'},
-                        {chinese: '绿色', pinyin: 'lǜ sè', italian: 'Verde', color: '#16a34a'},
-                        {chinese: '黑色', pinyin: 'hēi sè', italian: 'Nero', color: '#000000'},
-                        {chinese: '白色', pinyin: 'bái sè', italian: 'Bianco', color: '#ffffff'},
-                        {chinese: '粉色', pinyin: 'fěn sè', italian: 'Rosa', color: '#ec4899'},
-                        {chinese: '紫色', pinyin: 'zǐ sè', italian: 'Viola', color: '#9333ea'},
-                        {chinese: '橙色', pinyin: 'chéng sè', italian: 'Arancione', color: '#ea580c'},
-                        {chinese: '棕色', pinyin: 'zōng sè', italian: 'Marrone', color: '#92400e'},
-                        {chinese: '灰色', pinyin: 'huī sè', italian: 'Grigio', color: '#6b7280'}
+                        {cyrillic: 'красный', pronunciation: 'krasnyy', italian: 'Rosso', color: '#dc2626'},
+                        {cyrillic: 'синий', pronunciation: 'siniy', italian: 'Blu', color: '#2563eb'},
+                        {cyrillic: 'жёлтый', pronunciation: 'zhyoltyy', italian: 'Giallo', color: '#eab308'},
+                        {cyrillic: 'зелёный', pronunciation: 'zelyonyy', italian: 'Verde', color: '#16a34a'},
+                        {cyrillic: 'чёрный', pronunciation: 'chyornyy', italian: 'Nero', color: '#000000'},
+                        {cyrillic: 'белый', pronunciation: 'belyy', italian: 'Bianco', color: '#ffffff'},
+                        {cyrillic: 'розовый', pronunciation: 'rozovyy', italian: 'Rosa', color: '#ec4899'},
+                        {cyrillic: 'фиолетовый', pronunciation: 'fioletovyy', italian: 'Viola', color: '#9333ea'},
+                        {cyrillic: 'оранжевый', pronunciation: 'oranzhevyy', italian: 'Arancione', color: '#ea580c'},
+                        {cyrillic: 'коричневый', pronunciation: 'korichnevyy', italian: 'Marrone', color: '#92400e'},
+                        {cyrillic: 'серый', pronunciation: 'seryy', italian: 'Grigio', color: '#6b7280'}
                     ]
                 },
                 5: {
-                    title: '家庭 (Famiglia)',
-                    description: '家庭成员 - Membri della famiglia',
+                    title: 'Семья (Famiglia)',
+                    description: 'Члены семьи - Membri della famiglia',
                     content: [
-                        {chinese: '妈妈', pinyin: 'mā ma', italian: 'Madre'},
-                        {chinese: '爸爸', pinyin: 'bà ba', italian: 'Padre'},
-                        {chinese: '哥哥', pinyin: 'gē ge', italian: 'Fratello maggiore'},
-                        {chinese: '姐姐', pinyin: 'jiě jie', italian: 'Sorella maggiore'},
-                        {chinese: '弟弟', pinyin: 'dì di', italian: 'Fratello minore'},
-                        {chinese: '妹妹', pinyin: 'mèi mei', italian: 'Sorella minore'},
-                        {chinese: '奶奶', pinyin: 'nǎi nai', italian: 'Nonna (paterna)'},
-                        {chinese: '爷爷', pinyin: 'yé ye', italian: 'Nonno (paterno)'},
-                        {chinese: '外婆', pinyin: 'wài pó', italian: 'Nonna (materna)'},
-                        {chinese: '外公', pinyin: 'wài gōng', italian: 'Nonno (materno)'},
-                        {chinese: '孩子', pinyin: 'hái zi', italian: 'Bambino'},
-                        {chinese: '儿子', pinyin: 'ér zi', italian: 'Figlio'},
-                        {chinese: '女儿', pinyin: 'nǚ ér', italian: 'Figlia'},
-                        {chinese: '家庭', pinyin: 'jiā tíng', italian: 'Famiglia'}
+                        {cyrillic: 'мама', pronunciation: 'mama', italian: 'Mamma'},
+                        {cyrillic: 'папа', pronunciation: 'papa', italian: 'Papà'},
+                        {cyrillic: 'брат', pronunciation: 'brat', italian: 'Fratello'},
+                        {cyrillic: 'сестра', pronunciation: 'sestra', italian: 'Sorella'},
+                        {cyrillic: 'дедушка', pronunciation: 'dedushka', italian: 'Nonno'},
+                        {cyrillic: 'бабушка', pronunciation: 'babushka', italian: 'Nonna'},
+                        {cyrillic: 'сын', pronunciation: 'syn', italian: 'Figlio'},
+                        {cyrillic: 'дочь', pronunciation: 'doch\'', italian: 'Figlia'},
+                        {cyrillic: 'дядя', pronunciation: 'dyadya', italian: 'Zio'},
+                        {cyrillic: 'тётя', pronunciation: 'tyotya', italian: 'Zia'},
+                        {cyrillic: 'муж', pronunciation: 'muzh', italian: 'Marito'},
+                        {cyrillic: 'жена', pronunciation: 'zhena', italian: 'Moglie'},
+                        {cyrillic: 'родители', pronunciation: 'roditeli', italian: 'Genitori'},
+                        {cyrillic: 'дети', pronunciation: 'deti', italian: 'Bambini'},
+                        {cyrillic: 'семья', pronunciation: 'sem\'ya', italian: 'Famiglia'}
                     ]
                 },
                 6: {
-                    title: '食物 (Cibo)',
-                    description: '基本食物和饮料 - Cibi e bevande di base',
+                    title: 'Еда (Cibo)',
+                    description: 'Основная еда и напитки - Cibi e bevande di base',
                     content: [
-                        {chinese: '米饭', pinyin: 'mǐ fàn', italian: 'Riso'},
-                        {chinese: '面条', pinyin: 'miàn tiáo', italian: 'Noodles'},
-                        {chinese: '水', pinyin: 'shuǐ', italian: 'Acqua'},
-                        {chinese: '茶', pinyin: 'chá', italian: 'Tè'},
-                        {chinese: '咖啡', pinyin: 'kā fēi', italian: 'Caffè'},
-                        {chinese: '肉', pinyin: 'ròu', italian: 'Carne'},
-                        {chinese: '鱼', pinyin: 'yú', italian: 'Pesce'},
-                        {chinese: '鸡肉', pinyin: 'jī ròu', italian: 'Pollo'},
-                        {chinese: '水果', pinyin: 'shuǐ guǒ', italian: 'Frutta'},
-                        {chinese: '蔬菜', pinyin: 'shū cài', italian: 'Verdura'},
-                        {chinese: '苹果', pinyin: 'píng guǒ', italian: 'Mela'},
-                        {chinese: '香蕉', pinyin: 'xiāng jiāo', italian: 'Banana'},
-                        {chinese: '面包', pinyin: 'miàn bāo', italian: 'Pane'},
-                        {chinese: '牛奶', pinyin: 'niú nǎi', italian: 'Latte'}
+                        {cyrillic: 'хлеб', pronunciation: 'khleb', italian: 'Pane'},
+                        {cyrillic: 'молоко', pronunciation: 'moloko', italian: 'Latte'},
+                        {cyrillic: 'вода', pronunciation: 'voda', italian: 'Acqua'},
+                        {cyrillic: 'чай', pronunciation: 'chay', italian: 'Tè'},
+                        {cyrillic: 'кофе', pronunciation: 'kofe', italian: 'Caffè'},
+                        {cyrillic: 'мясо', pronunciation: 'myaso', italian: 'Carne'},
+                        {cyrillic: 'рыба', pronunciation: 'ryba', italian: 'Pesce'},
+                        {cyrillic: 'курица', pronunciation: 'kuritsa', italian: 'Pollo'},
+                        {cyrillic: 'овощи', pronunciation: 'ovoshchi', italian: 'Verdure'},
+                        {cyrillic: 'фрукты', pronunciation: 'frukty', italian: 'Frutta'},
+                        {cyrillic: 'яблоко', pronunciation: 'yabloko', italian: 'Mela'},
+                        {cyrillic: 'банан', pronunciation: 'banan', italian: 'Banana'},
+                        {cyrillic: 'борщ', pronunciation: 'borshch', italian: 'Borsch'},
+                        {cyrillic: 'водка', pronunciation: 'vodka', italian: 'Vodka'}
                     ]
                 },
                 7: {
-                    title: '时间 (Tempo)',
-                    description: '时间表达 - Espressioni di tempo',
+                    title: 'Время (Tempo)',
+                    description: 'Выражения времени - Espressioni di tempo',
                     content: [
-                        {chinese: '今天', pinyin: 'jīn tiān', italian: 'Oggi'},
-                        {chinese: '明天', pinyin: 'míng tiān', italian: 'Domani'},
-                        {chinese: '昨天', pinyin: 'zuó tiān', italian: 'Ieri'},
-                        {chinese: '现在', pinyin: 'xiàn zài', italian: 'Adesso'},
-                        {chinese: '以后', pinyin: 'yǐ hòu', italian: 'Dopo'},
-                        {chinese: '以前', pinyin: 'yǐ qián', italian: 'Prima'},
-                        {chinese: '小时', pinyin: 'xiǎo shí', italian: 'Ora'},
-                        {chinese: '分钟', pinyin: 'fēn zhōng', italian: 'Minuto'},
-                        {chinese: '秒', pinyin: 'miǎo', italian: 'Secondo'},
-                        {chinese: '星期', pinyin: 'xīng qī', italian: 'Settimana'},
-                        {chinese: '月', pinyin: 'yuè', italian: 'Mese'},
-                        {chinese: '年', pinyin: 'nián', italian: 'Anno'},
-                        {chinese: '早上', pinyin: 'zǎo shàng', italian: 'Mattina'},
-                        {chinese: '中午', pinyin: 'zhōng wǔ', italian: 'Mezzogiorno'},
-                        {chinese: '下午', pinyin: 'xià wǔ', italian: 'Pomeriggio'},
-                        {chinese: '晚上', pinyin: 'wǎn shàng', italian: 'Sera'}
+                        {cyrillic: 'сегодня', pronunciation: 'segodnya', italian: 'Oggi'},
+                        {cyrillic: 'завтра', pronunciation: 'zavtra', italian: 'Domani'},
+                        {cyrillic: 'вчера', pronunciation: 'vchera', italian: 'Ieri'},
+                        {cyrillic: 'сейчас', pronunciation: 'seychas', italian: 'Adesso'},
+                        {cyrillic: 'потом', pronunciation: 'potom', italian: 'Dopo'},
+                        {cyrillic: 'раньше', pronunciation: 'ran\'she', italian: 'Prima'},
+                        {cyrillic: 'час', pronunciation: 'chas', italian: 'Ora'},
+                        {cyrillic: 'минута', pronunciation: 'minuta', italian: 'Minuto'},
+                        {cyrillic: 'секунда', pronunciation: 'sekunda', italian: 'Secondo'},
+                        {cyrillic: 'неделя', pronunciation: 'nedelya', italian: 'Settimana'},
+                        {cyrillic: 'месяц', pronunciation: 'mesyats', italian: 'Mese'},
+                        {cyrillic: 'год', pronunciation: 'god', italian: 'Anno'},
+                        {cyrillic: 'утро', pronunciation: 'utro', italian: 'Mattina'},
+                        {cyrillic: 'день', pronunciation: 'den\'', italian: 'Giorno'},
+                        {cyrillic: 'вечер', pronunciation: 'vecher', italian: 'Sera'},
+                        {cyrillic: 'ночь', pronunciation: 'noch\'', italian: 'Notte'}
                     ]
                 },
                 8: {
-                    title: '动词 (Verbi)',
-                    description: '基本动词 - Verbi essenziali',
+                    title: 'Глаголы (Verbi)',
+                    description: 'Основные глаголы - Verbi essenziali',
                     content: [
-                        {chinese: '来', pinyin: 'lái', italian: 'Venire'},
-                        {chinese: '去', pinyin: 'qù', italian: 'Andare'},
-                        {chinese: '做', pinyin: 'zuò', italian: 'Fare'},
-                        {chinese: '是', pinyin: 'shì', italian: 'Essere'},
-                        {chinese: '有', pinyin: 'yǒu', italian: 'Avere'},
-                        {chinese: '吃', pinyin: 'chī', italian: 'Mangiare'},
-                        {chinese: '喝', pinyin: 'hē', italian: 'Bere'},
-                        {chinese: '看', pinyin: 'kàn', italian: 'Guardare/Vedere'},
-                        {chinese: '听', pinyin: 'tīng', italian: 'Sentire/Ascoltare'},
-                        {chinese: '说', pinyin: 'shuō', italian: 'Parlare/Dire'},
-                        {chinese: '读', pinyin: 'dú', italian: 'Leggere'},
-                        {chinese: '写', pinyin: 'xiě', italian: 'Scrivere'},
-                        {chinese: '学', pinyin: 'xué', italian: 'Studiare/Imparare'},
-                        {chinese: '工作', pinyin: 'gōng zuò', italian: 'Lavorare'},
-                        {chinese: '睡觉', pinyin: 'shuì jiào', italian: 'Dormire'},
-                        {chinese: '买', pinyin: 'mǎi', italian: 'Comprare'}
+                        {cyrillic: 'идти', pronunciation: 'idti', italian: 'Andare'},
+                        {cyrillic: 'приходить', pronunciation: 'prikhodit\'', italian: 'Venire'},
+                        {cyrillic: 'делать', pronunciation: 'delat\'', italian: 'Fare'},
+                        {cyrillic: 'быть', pronunciation: 'byt\'', italian: 'Essere'},
+                        {cyrillic: 'иметь', pronunciation: 'imet\'', italian: 'Avere'},
+                        {cyrillic: 'есть', pronunciation: 'yest\'', italian: 'Mangiare'},
+                        {cyrillic: 'пить', pronunciation: 'pit\'', italian: 'Bere'},
+                        {cyrillic: 'видеть', pronunciation: 'videt\'', italian: 'Vedere'},
+                        {cyrillic: 'слышать', pronunciation: 'slyshat\'', italian: 'Sentire'},
+                        {cyrillic: 'говорить', pronunciation: 'govorit\'', italian: 'Parlare'},
+                        {cyrillic: 'читать', pronunciation: 'chitat\'', italian: 'Leggere'},
+                        {cyrillic: 'писать', pronunciation: 'pisat\'', italian: 'Scrivere'},
+                        {cyrillic: 'изучать', pronunciation: 'izuchat\'', italian: 'Studiare'},
+                        {cyrillic: 'работать', pronunciation: 'rabotat\'', italian: 'Lavorare'},
+                        {cyrillic: 'спать', pronunciation: 'spat\'', italian: 'Dormire'},
+                        {cyrillic: 'покупать', pronunciation: 'pokupat\'', italian: 'Comprare'}
                     ]
                 }
             };
@@ -775,7 +815,7 @@
             if (lesson) {
                 showLessonContent(lesson.title, lesson.description, lesson.content, lessonNumber);
             } else {
-                alert(`🎉 恭喜！课程 ${lessonNumber} 可用且开放！`);
+                showInfoModal(`🎉 Поздравляем! Урок ${lessonNumber} доступен и открыт!`);
             }
         }
 
@@ -786,25 +826,25 @@
             
             let contentHTML = '';
             if (lessonNumber === 1) {
-                // Tones layout
+                // Alphabet layout
                 contentHTML = content.map(item => `
-                    <div class="bg-gradient-to-br from-red-50 to-yellow-50 rounded-xl p-6 text-center card-hover">
-                        <div class="text-4xl font-bold mb-2 ${item.color} chinese-font">${item.pinyin}</div>
-                        <div class="text-lg font-bold mb-2 chinese-font">${item.tone}</div>
+                    <div class="bg-gradient-to-br from-red-50 to-blue-50 rounded-xl p-6 text-center card-hover">
+                        <div class="text-4xl font-bold mb-2 text-red-600 cyrillic-font">${item.cyrillic}</div>
+                        <div class="text-lg font-bold mb-2 cyrillic-font">${item.name}</div>
                         <div class="pronunciation-badge rounded-full px-3 py-1 mb-3 inline-block">
-                            <span class="font-bold text-amber-800">${item.description}</span>
+                            <span class="font-bold text-amber-800">${item.pronunciation}</span>
                         </div>
-                        <div class="text-gray-600 text-sm chinese-font">${item.example}</div>
+                        <div class="text-gray-600 text-sm">${item.italian}</div>
                     </div>
                 `).join('');
             } else if (lessonNumber === 4) {
                 // Colors layout
                 contentHTML = content.map(item => `
-                    <div class="bg-gradient-to-br from-red-50 to-yellow-50 rounded-xl p-6 text-center card-hover">
+                    <div class="bg-gradient-to-br from-red-50 to-blue-50 rounded-xl p-6 text-center card-hover">
                         <div class="w-16 h-16 rounded-full mx-auto mb-3 border-4 border-white shadow-lg" style="background-color: ${item.color}"></div>
-                        <div class="text-xl font-bold mb-2 text-red-600 chinese-font">${item.chinese}</div>
+                        <div class="text-xl font-bold mb-2 text-red-600 cyrillic-font">${item.cyrillic}</div>
                         <div class="pronunciation-badge rounded-full px-3 py-1 mb-2 inline-block">
-                            <span class="font-bold text-amber-800">${item.pinyin}</span>
+                            <span class="font-bold text-amber-800">${item.pronunciation}</span>
                         </div>
                         <div class="text-gray-600 text-sm">${item.italian}</div>
                     </div>
@@ -812,11 +852,11 @@
             } else if (lessonNumber === 3) {
                 // Numbers layout
                 contentHTML = content.map(item => `
-                    <div class="bg-gradient-to-br from-red-50 to-yellow-50 rounded-xl p-6 text-center card-hover">
+                    <div class="bg-gradient-to-br from-red-50 to-blue-50 rounded-xl p-6 text-center card-hover">
                         <div class="text-3xl font-bold mb-2 text-red-600">${item.number}</div>
-                        <div class="text-xl font-bold mb-2 chinese-font">${item.chinese}</div>
+                        <div class="text-xl font-bold mb-2 cyrillic-font">${item.cyrillic}</div>
                         <div class="pronunciation-badge rounded-full px-3 py-1 mb-2 inline-block">
-                            <span class="font-bold text-amber-800">${item.pinyin}</span>
+                            <span class="font-bold text-amber-800">${item.pronunciation}</span>
                         </div>
                         <div class="text-gray-600 text-sm">${item.italian}</div>
                     </div>
@@ -824,10 +864,10 @@
             } else {
                 // Standard layout for other lessons
                 contentHTML = content.map(item => `
-                    <div class="bg-gradient-to-br from-red-50 to-yellow-50 rounded-xl p-6 text-center card-hover">
-                        <div class="text-2xl font-bold mb-2 text-red-600 chinese-font">${item.chinese}</div>
+                    <div class="bg-gradient-to-br from-red-50 to-blue-50 rounded-xl p-6 text-center card-hover">
+                        <div class="text-2xl font-bold mb-2 text-red-600 cyrillic-font">${item.cyrillic}</div>
                         <div class="pronunciation-badge rounded-full px-3 py-1 mb-3 inline-block">
-                            <span class="font-bold text-amber-800">${item.pinyin}</span>
+                            <span class="font-bold text-amber-800">${item.pronunciation}</span>
                         </div>
                         <div class="text-gray-600 text-sm">${item.italian}</div>
                     </div>
@@ -837,7 +877,7 @@
             modal.innerHTML = `
                 <div class="bg-white rounded-2xl p-8 max-w-6xl w-full max-h-[90vh] overflow-y-auto">
                     <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-3xl font-bold text-gray-800 chinese-font">${title}</h2>
+                        <h2 class="text-3xl font-bold text-gray-800 cyrillic-font">${title}</h2>
                         <button onclick="closeLessonModal()" class="text-gray-500 hover:text-gray-700 text-2xl">✕</button>
                     </div>
                     
@@ -848,11 +888,11 @@
                     </div>
                     
                     <div class="flex gap-4 justify-center">
-                        <button onclick="startLessonQuiz('${title}')" class="bg-gradient-to-r from-red-600 to-yellow-500 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all">
-                            🎯 做测试 (Fai il Test)
+                        <button onclick="startLessonQuiz('${title}')" class="bg-gradient-to-r from-red-600 to-blue-500 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all">
+                            🎯 Тест (Fai il Test)
                         </button>
                         <button onclick="closeLessonModal()" class="bg-gray-200 text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-300 transition-all">
-                            ✓ 完成 (Completato)
+                            ✓ Завершено (Completato)
                         </button>
                     </div>
                 </div>
@@ -871,55 +911,90 @@
         function startLessonQuiz(lessonTitle) {
             closeLessonModal();
             showSection('exercises');
-            alert(`🎯 太好了！让我们试试 ${lessonTitle} 的测试。去练习部分测试你学到的东西！`);
+            showInfoModal(`🎯 Отлично! Давайте попробуем тест ${lessonTitle}. Перейдите в раздел упражнений, чтобы проверить то, что вы изучили!`);
+        }
+
+        // Custom Info Modal instead of alert
+        function showInfoModal(message) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-white rounded-2xl p-8 max-w-sm w-full text-center">
+                    <p class="text-lg text-gray-800 mb-6">${message}</p>
+                    <button onclick="this.closest('.fixed.inset-0').remove()" class="bg-red-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-red-700 transition-all">
+                        OK
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
         }
 
         // Exercise functions
         let currentExercise = {
-            words: [
-                {chinese: '你好', correct: 'ciao', pinyin: 'nǐ hǎo'},
-                {chinese: '谢谢', correct: 'grazie', pinyin: 'xiè xiè'},
-                {chinese: '水', correct: 'acqua', pinyin: 'shuǐ'},
-                {chinese: '米饭', correct: 'riso', pinyin: 'mǐ fàn'},
-                {chinese: '妈妈', correct: 'madre', pinyin: 'mā ma'},
-                {chinese: '爸爸', correct: 'padre', pinyin: 'bà ba'},
-                {chinese: '红色', correct: 'rosso', pinyin: 'hóng sè'},
-                {chinese: '蓝色', correct: 'blu', pinyin: 'lán sè'}
+            allWords: [
+                {cyrillic: 'Привет', correct: 'Ciao', pronunciation: 'privet'},
+                {cyrillic: 'Спасибо', correct: 'Grazie', pronunciation: 'spasibo'},
+                {cyrillic: 'вода', correct: 'Acqua', pronunciation: 'voda'},
+                {cyrillic: 'хлеб', correct: 'Pane', pronunciation: 'khleb'},
+                {cyrillic: 'мама', correct: 'Mamma', pronunciation: 'mama'},
+                {cyrillic: 'папа', correct: 'Papà', pronunciation: 'papa'},
+                {cyrillic: 'красный', correct: 'Rosso', pronunciation: 'krasnyy'},
+                {cyrillic: 'синий', correct: 'Blu', pronunciation: 'siniy'},
+                {cyrillic: 'один', correct: 'Uno', pronunciation: 'odin'},
+                {cyrillic: 'два', correct: 'Due', pronunciation: 'dva'},
+                {cyrillic: 'год', correct: 'Anno', pronunciation: 'god'},
+                {cyrillic: 'идти', correct: 'Andare', pronunciation: 'idti'},
+                {cyrillic: 'есть', correct: 'Mangiare', pronunciation: 'yest\''}
             ],
-            currentIndex: 0
+            currentIndex: 0,
+            currentQuestionWord: null,
+            correctAnswerItalian: ''
         };
 
+        // Utility function to shuffle an array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
         function startExercise(type) {
-            if (type === 'hanzi') {
+            if (type === 'cyrillic') {
                 document.getElementById('exercises-section').scrollIntoView({behavior: 'smooth'});
                 document.getElementById('exercise-area').scrollIntoView({behavior: 'smooth'});
+                nextExercise(); // Start the first exercise question
             } else {
-                alert(`🎵 声调练习！在真实应用中，你可以使用麦克风练习中文声调的发音。`);
+                showInfoModal(`🎵 Упражнение на произношение! В реальном приложении вы можете использовать микрофон для практики произношения русских звуков.`);
             }
         }
 
-        function checkAnswer(answer) {
+        function checkAnswer(selectedAnswer) {
             const feedback = document.getElementById('exercise-feedback');
-            const word = currentExercise.words[currentExercise.currentIndex];
+            const word = currentExercise.currentQuestionWord;
             
-            if (answer === word.correct) {
+            // Clear previous feedback classes
+            feedback.classList.remove('bg-green-100', 'border-green-400', 'text-green-700', 'bg-orange-100', 'border-orange-400', 'text-orange-700');
+
+            if (selectedAnswer === currentExercise.correctAnswerItalian) {
                 feedback.innerHTML = `
-                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-xl mb-4 bounce-in">
-                        <strong>正确！🎉</strong> "${word.chinese}" significa "${word.correct}" in italiano
-                        <br><span class="text-sm">(Corretto! "${word.chinese}" vuol dire "${word.correct}")</span>
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl mb-4 bounce-in">
+                        <strong>Правильно! 🎉</strong> "${word.cyrillic}" significa "${word.correct}" in italiano.
+                        <br><span class="text-sm">(Corretto! "${word.cyrillic}" vuol dire "${word.correct}")</span>
                     </div>
-                    <button onclick="nextExercise()" class="bg-gradient-to-r from-red-500 to-yellow-500 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all">
-                        下一题 → (Prossima Domanda)
+                    <button onclick="nextExercise()" class="bg-gradient-to-r from-red-500 to-blue-500 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all">
+                        Следующий вопрос → (Prossima Domanda)
                     </button>
                 `;
             } else {
                 feedback.innerHTML = `
                     <div class="bg-orange-100 border border-orange-400 text-orange-700 px-4 py-3 rounded-xl mb-4 bounce-in">
-                        <strong>再试试！🤔</strong> "${word.chinese}" non significa "${answer}"...
-                        <br><span class="text-sm">(Riprova! "${word.chinese}" non vuol dire "${answer}"...)</span>
+                        <strong>Попробуйте ещё раз! 🤔</strong> "${word.cyrillic}" non significa "${selectedAnswer}". La risposta corretta era "${currentExercise.correctAnswerItalian}".
+                        <br><span class="text-sm">(Riprova! "${word.cyrillic}" non vuol dire "${selectedAnswer}". La risposta corretta era "${currentExercise.correctAnswerItalian}")</span>
                     </div>
                     <button onclick="nextExercise()" class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg transition-all">
-                        显示答案 (Mostra Risposta)
+                        Следующий вопрос → (Prossima Domanda)
                     </button>
                 `;
             }
@@ -927,22 +1002,60 @@
             feedback.classList.remove('hidden');
             
             // Disable option buttons
-            document.querySelectorAll('.exercise-option').forEach(btn => {
+            document.querySelectorAll('#exercise-options-container button').forEach(btn => {
                 btn.disabled = true;
                 btn.classList.add('opacity-50');
             });
         }
 
         function nextExercise() {
-            currentExercise.currentIndex = (currentExercise.currentIndex + 1) % currentExercise.words.length;
-            const word = currentExercise.words[currentExercise.currentIndex];
+            // Move to the next word, loop back to start if at the end
+            currentExercise.currentIndex = (currentExercise.currentIndex + 1) % currentExercise.allWords.length;
+            const currentQuestionData = currentExercise.allWords[currentExercise.currentIndex];
             
-            document.getElementById('exercise-hanzi').textContent = word.chinese;
-            document.getElementById('exercise-pinyin').textContent = word.pinyin;
+            currentExercise.currentQuestionWord = currentQuestionData;
+            currentExercise.correctAnswerItalian = currentQuestionData.correct;
+
+            // Update displayed Russian word and pronunciation
+            document.getElementById('exercise-russian').textContent = currentQuestionData.cyrillic;
+            document.getElementById('exercise-pronunciation').textContent = currentQuestionData.pronunciation;
+
+            // Generate options
+            let options = [currentQuestionData.correct]; // Start with the correct answer
+            
+            // Filter out the correct answer and get remaining Italian translations
+            const incorrectOptionsPool = currentExercise.allWords
+                                        .filter(w => w.correct !== currentQuestionData.correct)
+                                        .map(w => w.correct);
+
+            // Select 3 random unique incorrect options
+            shuffleArray(incorrectOptionsPool); // Shuffle the pool to pick random ones
+            for (let i = 0; options.length < 4 && i < incorrectOptionsPool.length; i++) {
+                if (!options.includes(incorrectOptionsPool[i])) { // Ensure uniqueness
+                    options.push(incorrectOptionsPool[i]);
+                }
+            }
+            
+            // Shuffle the final options
+            shuffleArray(options);
+
+            // Populate buttons
+            const optionsContainer = document.getElementById('exercise-options-container');
+            optionsContainer.innerHTML = ''; // Clear previous options
+
+            const buttonColors = ['bg-red-100 text-red-800', 'bg-blue-100 text-blue-800', 'bg-green-100 text-green-800', 'bg-purple-100 text-purple-800'];
+
+            options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.className = `exercise-option ${buttonColors[index % buttonColors.length]} py-4 px-6 rounded-xl font-medium transition-all hover:bg-opacity-80`;
+                button.setAttribute('onclick', `checkAnswer('${option}')`);
+                button.textContent = option;
+                optionsContainer.appendChild(button);
+            });
+
+            // Hide feedback and re-enable option buttons
             document.getElementById('exercise-feedback').classList.add('hidden');
-            
-            // Re-enable option buttons
-            document.querySelectorAll('.exercise-option').forEach(btn => {
+            document.querySelectorAll('#exercise-options-container button').forEach(btn => {
                 btn.disabled = false;
                 btn.classList.remove('opacity-50');
             });
@@ -950,8 +1063,20 @@
 
         // Initialize app
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('🇨🇳 中文学习应用已加载！所有内容开放！');
+            // Set initial section to home
+            showSection('home');
+
+            // Add some interactive animations (unchanged from original)
+            setInterval(() => {
+                const progressBar = document.getElementById('progress-bar');
+                const currentWidth = parseFloat(progressBar.style.width); // Use parseFloat for more precision
+                if (currentWidth < 100) {
+                    const newWidth = Math.min(currentWidth + Math.random() * 2, 100);
+                    progressBar.style.width = newWidth + '%';
+                    document.getElementById('progress-percent').textContent = Math.round(newWidth) + '%';
+                }
+            }, 9000);
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'970b11fcf0bfee8e',t:'MTc1NTQ1MzYxOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
